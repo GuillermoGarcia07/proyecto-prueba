@@ -24,6 +24,7 @@ Route::view('login', 'welcome')->name('login')->middleware('guest');
 Route::post('auth', [UserController::class, 'loginUser']);
 Route::get('cerrarSesion', [UserController::class, 'logout'])->middleware('auth');
 Route::view('inicio', 'inicio/inicio')->middleware('auth');
-
 Route::post('registrarPropuesta', [PropsalController::class, 'store'])->middleware('auth');
 Route::post('registrarContactenos', [ContactController::class, 'store'])->middleware('auth');
+Route::get('contactenosLists', [ContactController::class, 'index'])->middleware('auth');
+Route::get('propuestasLists', [PropsalController::class, 'index'])->middleware('auth');

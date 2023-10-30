@@ -8,11 +8,15 @@ use Illuminate\Http\Request;
 class PropsalController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * endPoint que trae todo los registros.
      */
     public function index()
     {
-        //
+        $data = PropsalModel::all();
+
+        return response([
+            "data" => $data
+        ], 200);
     }
 
     /**
