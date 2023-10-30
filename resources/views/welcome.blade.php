@@ -39,7 +39,7 @@
 </head>
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
     <main class="form-signin">
-        <form action="auth" method="POST">
+        <form action="auth" method="POST" autocomplete="off">
             @csrf
             <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
             <div class="form-floating">
