@@ -28,14 +28,17 @@ class PropsalController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * endPoint para guardar los datos de propuestas.
      */
     public function store(Request $request)
     {
+        //recibe los datos del formulario.
         $datos = $request->except("_token");
 
+        //registra los datos en la tabla.
         PropsalModel::insert($datos);
 
+        // muestra la respuesta.
         return response([
             "message" => "Propuesta enviada",
             "status" => 1

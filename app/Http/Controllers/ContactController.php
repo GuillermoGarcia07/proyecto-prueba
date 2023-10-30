@@ -28,14 +28,17 @@ class ContactController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * endPoint para guardar los datos de contactenos.
      */
     public function store(Request $request)
     {
+        //recibe los datos del formulario.
         $datos = $request->except("_token");
 
+        //registra los datos en la tabla.
         ContactModel::insert($datos);
 
+        // muestra la respuesta.
         return response([
             "message" => "Datos enviados",
             "status" => 1
